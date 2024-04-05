@@ -17,7 +17,7 @@ const CarCard = (
   // mileage
 ) => {
   return (
-    <div>
+    <li>
       <img src={img} alt={make} />
       <h3>
         {make}
@@ -32,7 +32,7 @@ const CarCard = (
       <p>{id}</p>
       <p>{functionalities}</p>
       <button></button>
-    </div>
+    </li>
   );
 };
 
