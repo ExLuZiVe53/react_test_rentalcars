@@ -1,38 +1,21 @@
-const CarCard = (
-  id,
-  year,
-  make,
-  model,
-  type,
-  img,
-  description,
-  fuelConsumption,
-  engineSize,
-  accessories,
-  functionalities,
-  rentalPrice,
-  rentalCompany,
-  address
-  // rentalConditions,
-  // mileage
-) => {
+const CarCard = (items) => {
   return (
-    <li>
-      <img src={img} alt={make} />
+    <div>
+      <img width={401} src={items.img} alt={items.make} />
       <h3>
-        {make}
-        <span>{model}</span>
+        {items.make}
+        <span>{items.model}</span>
       </h3>
-      <span>{rentalPrice}</span>
+      <span>{items.rentalPrice}</span>
 
-      <p>{address}</p>
-      <p>{rentalCompany}</p>
-      <p>{type}</p>
-      <p>{model}</p>
-      <p>{id}</p>
-      <p>{functionalities}</p>
+      <p>{items.address}</p>
+      <p>{items.rentalCompany}</p>
+      <p>{items.type}</p>
+      <p>{items.model}</p>
+      <p>{items.id}</p>
+      <p>{items.functionalities}</p>
       <button></button>
-    </li>
+    </div>
   );
 };
 

@@ -1,14 +1,13 @@
-// import CarCard from "../CarCard/CarCard.jsx";
+import CarCard from "../CarCard/CarCard.jsx";
 
 const CarList = ({ items }) => {
   return (
     <ul>
       {items.map((item) => {
-        console.log(items);
         return (
-          <li key={`${item.id}_${item.model}`}>
+          <li key={`${item.id}_${item.type}`}>
             {item.model}
-            {/* <CarCard
+            <CarCard
               year={item.year}
               make={item.make}
               model={item.model}
@@ -24,7 +23,7 @@ const CarList = ({ items }) => {
               address={item.address}
               rentalConditions={item.rentalConditions}
               mileage={item.mileage}
-            /> */}
+            />
           </li>
         );
       })}
