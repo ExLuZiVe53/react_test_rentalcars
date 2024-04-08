@@ -1,16 +1,16 @@
+import PropTypes from "prop-types";
 import CarCard from "../CarCard/CarCard.jsx";
 
 const CarList = ({ items }) => {
-  console.log(items);
   const showCars = Array.isArray(items) && items.length;
   return (
-    <ul className="carsList">
+    <ul className="cars__List">
       {showCars &&
         items.map((item) => {
           return (
-            <li key={`${item.id}_${item.type}`}>
-              {item.model}
+            <li className="cars__Item" key={`${item.id}_${item.engineSize}`}>
               <CarCard
+                id={item.id}
                 year={item.year}
                 make={item.make}
                 model={item.model}
@@ -34,3 +34,13 @@ const CarList = ({ items }) => {
   );
 };
 export default CarList;
+
+CarList.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+      PropTypes.arrayOf(PropTypes.string),
+    ])
+  ),
+};

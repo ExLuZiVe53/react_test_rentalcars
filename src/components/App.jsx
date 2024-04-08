@@ -1,11 +1,13 @@
 // import CarForm from "./components/CarForm/CarForm";
-import CarList from "./components/CarList/CarList";
-import cars from "./cars.json";
+import CarList from "./CarList/CarList";
+import cars from "../cars.json";
+// import { useState } from "react";
 
 const App = () => {
+  // const [carClass, setCarClass] = useState(false);
+
   return (
     <>
-      {/* <CarCard /> */}
       <CarList items={cars} />
       {/* <Routes>
         <Route path="/" element={<HomePage />} />
