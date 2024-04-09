@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import CarCard from "../CarCard/CarCard.jsx";
 
-const CarList = ({ items }) => {
+const CarList = ({ items, toogleFavorite }) => {
   const showCars = Array.isArray(items) && items.length;
   return (
     <ul className="cars__List">
@@ -26,6 +26,7 @@ const CarList = ({ items }) => {
                 address={item.address}
                 rentalConditions={item.rentalConditions}
                 mileage={item.mileage}
+                toogleFavorite={toogleFavorite}
               />
             </li>
           );
@@ -35,12 +36,12 @@ const CarList = ({ items }) => {
 };
 export default CarList;
 
-CarList.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.arrayOf(PropTypes.string),
-    ])
-  ),
-};
+// CarList.propTypes = {
+//   items: PropTypes.arrayOf(
+//     PropTypes.oneOfType([
+//       PropTypes.string,
+//       PropTypes.number,
+//       PropTypes.arrayOf(PropTypes.string),
+//     ])
+//   ),
+// };

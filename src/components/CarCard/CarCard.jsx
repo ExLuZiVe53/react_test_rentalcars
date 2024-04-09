@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { FaRegHeart } from "react-icons/fa6";
 
 const CarCard = ({
   id,
@@ -15,12 +16,21 @@ const CarCard = ({
   rentalPrice,
   rentalCompany,
   address,
+
   // rentalConditions,
   // mileage,
+  toogleFavorite,
 }) => {
+  // const handelClick = () => {
+  //   console.log("Click on button");
+  // };
+
   return (
     <div className="cardContainer">
       <img width={401} src={img} alt={make} />
+      <button type="button" onClick={() => toogleFavorite(id)}>
+        <FaRegHeart />
+      </button>
       <h3 className="titleMake">
         {make}
         <span className="subtextModel">{model}</span>
@@ -52,5 +62,6 @@ CarCard.propTypes = {
     rentalPrice: PropTypes.string,
     rentalCompany: PropTypes.string,
     address: PropTypes.string,
+    toogleFavorite: PropTypes.func,
   }),
 };
