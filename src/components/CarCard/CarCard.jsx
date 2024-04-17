@@ -21,9 +21,12 @@ const CarCard = ({
   // mileage,
   toogleFavorite,
 }) => {
-  // const handelClick = () => {
-  //   console.log("Click on button");
-  // };
+  const tableInfoCars = address.split(",");
+
+  const city = tableInfoCars[1];
+  const country = tableInfoCars[2];
+  // const oneFuncion = functionalities.split(",");
+  // console.log(oneFuncion);
 
   return (
     <div className="cardContainer">
@@ -31,18 +34,38 @@ const CarCard = ({
       <button type="button" onClick={() => toogleFavorite(id)}>
         <FaRegHeart />
       </button>
-      <h3 className="titleMake">
-        {make}
-        <span className="subtextModel">{model}</span>
-      </h3>
-      <p className="textYear">{year}</p>
-      <span className="subtextRentalPrice">{rentalPrice}</span>
-      <p className="textAddress">{address}</p>
-      <p className="textRentalCompany">{rentalCompany}</p>
-      <p className="textType">{type}</p>
-      <p className="textModel">{model}</p>
-      <p className="textId">{id}</p>
-      <p className="textFunctionalities">{functionalities[0]}</p>
+      <div className="cardInfo">
+        <h3 className="titleMake">
+          {make}
+          <span className="subtextModel">{model}</span>
+        </h3>
+        <p className="textYear">{year}</p>
+        <span className="subtextRentalPrice">{rentalPrice}</span>
+      </div>
+      <table>
+        <thead></thead>
+        <tbody>
+          <tr>
+            <td className="textCity">{city}</td>
+            <td className="textCountry">{country}</td>
+            <td className="textRentalCompany">{rentalCompany}</td>
+            <td>Premium</td>
+          </tr>
+          <tr>
+            <td className="textType">{type}</td>
+            <td className="textModel">{make}</td>
+            <td className="textId">{id}</td>
+            <td className="textFunctionalities">{functionalities[0]}</td>
+          </tr>
+        </tbody>
+      </table>
+      {/* <p className="textCity">{city}</p> */}
+      {/* <p className="textCountry">{country}</p> */}
+      {/* <p className="textRentalCompany">{rentalCompany}</p> */}
+      {/* <p className="textType">{type}</p> */}
+      {/* <p className="textModel">{model}</p> */}
+      {/* <p className="textId">{id}</p> */}
+      {/* <p className="textFunctionalities">{functionalities[0]}</p> */}
       <button className="btnMore">Learn more</button>
     </div>
   );
