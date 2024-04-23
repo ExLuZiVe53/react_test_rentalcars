@@ -11,8 +11,8 @@ const CarCard = ({
   // description,
   // fuelConsumption,
   // engineSize,
-  // accessories,
-  functionalities,
+  accessories,
+  // functionalities,
   rentalPrice,
   rentalCompany,
   address,
@@ -53,19 +53,13 @@ const CarCard = ({
           </tr>
           <tr>
             <td className="textType">{type}</td>
-            <td className="textModel">{make}</td>
+            <td className="textMake">{make}</td>
             <td className="textId">{id}</td>
-            <td className="textFunctionalities">{functionalities[0]}</td>
+            <td className="textAccessories">{accessories[1]}</td>
           </tr>
         </tbody>
       </table>
-      {/* <p className="textCity">{city}</p> */}
-      {/* <p className="textCountry">{country}</p> */}
-      {/* <p className="textRentalCompany">{rentalCompany}</p> */}
-      {/* <p className="textType">{type}</p> */}
-      {/* <p className="textModel">{model}</p> */}
-      {/* <p className="textId">{id}</p> */}
-      {/* <p className="textFunctionalities">{functionalities[0]}</p> */}
+
       <button className="btnMore">Learn more</button>
     </div>
   );
