@@ -19,7 +19,7 @@ const CarCard = ({
 
   // rentalConditions,
   // mileage,
-  toogleFavorite,
+  // toogleFavorite,
 }) => {
   const tableInfoCars = address.split(",");
 
@@ -31,7 +31,10 @@ const CarCard = ({
   return (
     <div className="cardContainer">
       <img width={401} src={img} alt={make} />
-      <button type="button" onClick={() => toogleFavorite(id)}>
+      <button
+        type="button"
+        // onClick={() => toogleFavorite(id)}
+      >
         <FaRegHeart />
       </button>
       <div className="cardInfo">

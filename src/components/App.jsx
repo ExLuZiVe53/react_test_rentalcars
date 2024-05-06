@@ -4,6 +4,11 @@ import CarList from "./CarList/CarList";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import { Route, Routes } from "react-router-dom";
+
+import HomePage from "../pages/HomePage";
+import CatalogPage from "../pages/CatalogPage";
+import FavoritePage from "../pages/FavoritePage";
 
 const App = () => {
   // const [carsMagazine, setCarsMagazine] = useState(cars);
@@ -17,6 +22,7 @@ const App = () => {
         "https://65cd17cedd519126b8401aef.mockapi.io/cars"
       );
       setSearchCars(response.data);
+      console.log(response);
     }
     // 2. You must call function
     fetchSearchAllCars();
@@ -41,11 +47,11 @@ const App = () => {
         items={searchCars}
         // toogleFavorite={toogleFavorite}
       />
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/catalog" element={<CatalogPage />} />
-        <Route path="/favorites" element={<ClassifiedsPage />} />
-      </Routes> */}
+        <Route path="/favorites" element={<FavoritePage />} />
+      </Routes>
     </>
   );
 };
