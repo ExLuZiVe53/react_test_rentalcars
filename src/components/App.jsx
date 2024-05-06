@@ -4,30 +4,14 @@ import CarList from "./CarList/CarList";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 
 import HomePage from "../pages/HomePage";
 import CatalogPage from "../pages/CatalogPage";
 import FavoritePage from "../pages/FavoritePage";
+import NotFound from "../pages/NotFound";
 
 const App = () => {
-  // const [carsMagazine, setCarsMagazine] = useState(cars);
-  const [searchCars, setSearchCars] = useState([]);
-
-  useEffect(() => {
-    // 1. We declare an asynchronous function
-    async function fetchSearchAllCars() {
-      // HTTP Request
-      const response = await axios.get(
-        "https://65cd17cedd519126b8401aef.mockapi.io/cars"
-      );
-      setSearchCars(response.data);
-      console.log(response);
-    }
-    // 2. You must call function
-    fetchSearchAllCars();
-  }, []);
-
   // const toogleFavorite = (id) => {
   //   setCarsMagazine(
   //     carsMagazine.map((car) => {
@@ -43,14 +27,25 @@ const App = () => {
 
   return (
     <>
-      <CarList
-        items={searchCars}
-        // toogleFavorite={toogleFavorite}
-      />
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/catalog">Catalog</Link>
+          </li>
+          <li>
+            <Link to="/favorites">Favorites</Link>
+          </li>
+        </ul>
+      </nav>
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/catalog" element={<CatalogPage />} />
         <Route path="/favorites" element={<FavoritePage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
