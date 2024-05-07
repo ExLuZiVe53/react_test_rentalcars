@@ -1,22 +1,25 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import CarList from "../components/CarList/CarList";
+import { fetchCars } from "../services/api";
 
 const CatalogPage = () => {
   const [searchCars, setSearchCars] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // 1. We declare an asynchronous function
-    async function fetchSearchAllCars() {
-      // HTTP Request
-      const response = await axios.get(
-        "https://65cd17cedd519126b8401aef.mockapi.io/cars"
-      );
-      setSearchCars(response.data);
-      console.log(response);
-    }
-    // 2. You must call function
-    fetchSearchAllCars();
+    const fetchAllCars = async () => {
+      try {
+        setIsLoading(true);
+        const carsData = await fetchCars();
+        setSearchCars(carsData);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchAllCars();
   }, []);
 
   return (

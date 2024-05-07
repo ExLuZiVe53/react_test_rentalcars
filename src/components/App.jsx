@@ -1,15 +1,12 @@
 // import CarForm from "./components/CarForm/CarForm";
-import CarList from "./CarList/CarList";
-// import cars from "../cars.json";
-import { useState } from "react";
-import { useEffect } from "react";
-import axios from "axios";
+
 import { Link, Route, Routes } from "react-router-dom";
 
 import HomePage from "../pages/HomePage";
 import CatalogPage from "../pages/CatalogPage";
 import FavoritePage from "../pages/FavoritePage";
 import NotFound from "../pages/NotFound";
+import CarCard from "./CarCard/CarCard";
 
 const App = () => {
   // const toogleFavorite = (id) => {
@@ -45,6 +42,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/catalog" element={<CatalogPage />} />
         <Route path="/favorites" element={<FavoritePage />} />
+        <Route path="/catalog/:carId" element={<CarCard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
