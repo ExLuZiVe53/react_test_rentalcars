@@ -1,12 +1,14 @@
+import { Suspense, lazy } from "react";
 // import CarForm from "./components/CarForm/CarForm";
 
 import { Link, Route, Routes } from "react-router-dom";
+import Loader from "./Loader";
 
-import HomePage from "../pages/HomePage";
-import CatalogPage from "../pages/CatalogPage";
-import FavoritePage from "../pages/FavoritePage";
-import NotFound from "../pages/NotFound";
-import CarCard from "./CarCard/CarCard";
+const HomePage = lazy(() => import("../pages/HomePage"));
+const CatalogPage = lazy(() => import("../pages/CatalogPage"));
+const FavoritePage = lazy(() => import("../pages/FavoritePage"));
+const NotFound = lazy(() => import("../pages/NotFound"));
+const OneCarPage = lazy(() => import("../pages/OneCarPage"));
 
 const App = () => {
   // const toogleFavorite = (id) => {
@@ -24,27 +26,31 @@ const App = () => {
 
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/catalog">Catalog</Link>
-          </li>
-          <li>
-            <Link to="/favorites">Favorites</Link>
-          </li>
-        </ul>
-      </nav>
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/catalog">Catalog</Link>
+            </li>
+            <li>
+              <Link to="/favorites">Favorites</Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/catalog" element={<CatalogPage />} />
-        <Route path="/favorites" element={<FavoritePage />} />
-        <Route path="/catalog/:carId" element={<CarCard />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/catalog" element={<CatalogPage />} />
+          <Route path="/favorites" element={<FavoritePage />} />
+          <Route path="/catalog/:carId" element={<OneCarPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </>
   );
 };

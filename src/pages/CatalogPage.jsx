@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import CarList from "../components/CarList/CarList";
 import { fetchCars } from "../services/api";
-import { Hourglass } from "react-loader-spinner";
-import { ErrorMessage } from "../components/ErrorMessage/ErrorMessage";
+import Loader from "../components/Loader";
+import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
 
 const CatalogPage = () => {
   const [searchCars, setSearchCars] = useState([]);
@@ -27,17 +27,7 @@ const CatalogPage = () => {
   return (
     <div>
       <h1>CatalogPage</h1>
-      {isLoading && (
-        <Hourglass
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="hourglass-loading"
-          wrapperStyle={{}}
-          wrapperClass=""
-          colors={["#306cce", "#72a1ed"]}
-        />
-      )}
+      {isLoading && <Loader />}
       {error && <ErrorMessage message={error} />}
       <CarList
         items={searchCars}
