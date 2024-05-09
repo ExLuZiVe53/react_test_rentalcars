@@ -7,6 +7,15 @@ export const fetchCars = async () => {
   return data;
 };
 
+export const fetchOneCar = async (carId) => {
+  const { data } = await axios.get(
+    "https://65cd17cedd519126b8401aef.mockapi.io/cars/:carId"
+  );
+  fetchOneCar(carId);
+  console.log(data);
+  return data;
+};
+
 //  useEffect(() => {
 //    // 1. We declare an asynchronous function
 //    async function fetchSearchAllCars() {
