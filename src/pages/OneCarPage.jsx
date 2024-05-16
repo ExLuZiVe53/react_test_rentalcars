@@ -1,10 +1,19 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { fetchCars } from "../services/api";
 
 const OneCarPage = () => {
   const { carId } = useParams();
+  console.log(carId);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const fetchOneCar = async (data) => {
+      const oneCarData = await fetchCars(data);
+      console.log(oneCarData);
+    };
+
+    fetchOneCar();
+  }, []);
 
   return (
     <div>
