@@ -1,10 +1,12 @@
 // import PropTypes from "prop-types";
 import CarCard from "../CarCard/CarCard.jsx";
+import CarForm from "../CarForm/CarForm.jsx";
 
 const CarList = ({ items, toogleFavorite }) => {
   const showCars = Array.isArray(items) && items.length;
   return (
     <ul className="cars__List">
+      <CarForm />
       {showCars &&
         items.map((item) => {
           return (
