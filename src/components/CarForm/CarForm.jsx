@@ -16,7 +16,7 @@ const CarForm = () => {
           <option value="200">200</option>
           <option value="500">500</option>
         </select>
-        <label htmlFor="carMileageFrom">Сar mileage / km</label>
+        <label htmlFor="carMileageFrom">Car mileage / km</label>
         <input type="text" id="carMileageFrom" placeholder="From" />
         <label htmlFor="carMileageTo"></label>
         <input type="text" id="carMileageTo" placeholder="To" />

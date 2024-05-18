@@ -29,6 +29,7 @@ const CatalogPage = () => {
       <h1>CatalogPage</h1>
       {isLoading && <Loader />}
       {error && <ErrorMessage message={error} />}
+
       <CarList
         items={searchCars}
         // toogleFavorite={toogleFavorite}
