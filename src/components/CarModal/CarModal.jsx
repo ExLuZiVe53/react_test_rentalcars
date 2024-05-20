@@ -3,9 +3,9 @@ const CarModal = () => {
     <div className="overlay">
       <div className="modal">
         <img src="" alt="" />
-        <h3 className="titleMake"></h3>
-        <span className="subtextModel"></span>
-        <p className="textYear"></p>
+        <h3 className="titleMake">Make</h3>
+        <span className="subtextModel">Model</span>
+        <p className="textYear">Year</p>
         <table>
           <thead></thead>
           <tbody>
