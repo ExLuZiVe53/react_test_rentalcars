@@ -1,7 +1,27 @@
-const CarModal = () => {
+import { useEffect } from "react";
+
+const CarModal = ({ onCloseModal, modalData }) => {
+  const onOverlayClick = (event) => {
+    if (event.target === event.currentTarget) {
+      onCloseModal();
+    }
+  };
+
+  useEffect(() => {
+    const onEscClick = (event) => {
+      if (event.code === "Escape") {
+        onCloseModal();
+      }
+    };
+    window.addEventListener("keydown", onEscClick);
+    return () => {
+      window.removeEventListener("keydown", onEscClick);
+    };
+  }, [onCloseModal]);
   return (
-    <div className="overlay">
+    <div className="overlay" onClick={onOverlayClick}>
       <div className="modal">
+        {modalData}
         <img src="" alt="" />
         <h3 className="titleMake">Make</h3>
         <span className="subtextModel">Model</span>

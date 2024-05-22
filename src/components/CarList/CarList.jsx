@@ -2,7 +2,7 @@
 import CarCard from "../CarCard/CarCard.jsx";
 import CarForm from "../CarForm/CarForm.jsx";
 
-const CarList = ({ items, toogleFavorite }) => {
+const CarList = ({ items, toogleFavorite, onOpenModal }) => {
   const showCars = Array.isArray(items) && items.length;
   return (
     <ul className="cars__List">
@@ -29,6 +29,7 @@ const CarList = ({ items, toogleFavorite }) => {
                 rentalConditions={item.rentalConditions}
                 mileage={item.mileage}
                 toogleFavorite={toogleFavorite}
+                onOpenModal={onOpenModal}
               />
             </li>
           );

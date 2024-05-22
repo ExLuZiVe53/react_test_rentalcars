@@ -16,7 +16,7 @@ const CarCard = ({
   rentalPrice,
   rentalCompany,
   address,
-
+  onOpenModal,
   // rentalConditions,
   // mileage,
   // toogleFavorite,
@@ -46,7 +46,7 @@ const CarCard = ({
         <span className="subtextRentalPrice">{rentalPrice}</span>
       </div>
       <table>
-        <thead></thead>
+        <thead>Model</thead>
         <tbody>
           <tr>
             <td className="textCity">{city}</td>
@@ -63,7 +63,9 @@ const CarCard = ({
         </tbody>
       </table>
 
-      <button className="btnMore">Learn more</button>
+      <button className="btnMore" onClick={() => onOpenModal()}>
+        Learn more
+      </button>
     </div>
   );
 };
@@ -83,5 +85,6 @@ CarCard.propTypes = {
     rentalCompany: PropTypes.string,
     address: PropTypes.string,
     toogleFavorite: PropTypes.func,
+    onOpenModal: PropTypes.func,
   }),
 };
