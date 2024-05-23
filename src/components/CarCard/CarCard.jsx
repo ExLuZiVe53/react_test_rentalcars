@@ -46,7 +46,6 @@ const CarCard = ({
         <span className="subtextRentalPrice">{rentalPrice}</span>
       </div>
       <table>
-        <thead>Model</thead>
         <tbody>
           <tr>
             <td className="textCity">{city}</td>

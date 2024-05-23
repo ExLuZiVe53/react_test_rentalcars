@@ -27,7 +27,6 @@ const CarModal = ({ onCloseModal, modalData }) => {
         <span className="subtextModel">Model</span>
         <p className="textYear">Year</p>
         <table>
-          <thead></thead>
           <tbody>
             <tr>
               <td className="textCity">City</td>
@@ -46,8 +45,8 @@ const CarModal = ({ onCloseModal, modalData }) => {
           The Buick Enclave is a stylish and spacious SUV known for its
           comfortable ride and luxurious features.
         </h3>
+        <h4>Accessories and functionalities:</h4>
         <table>
-          <thead>Accessories and functionalities:</thead>
           <tbody>
             <tr>
               <td className="textAccessories0">Accessories0</td>
