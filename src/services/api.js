@@ -8,12 +8,12 @@ export const fetchCars = async () => {
   return data;
 };
 
-export const fetchCar = async (carId) => {
+export const fetchCar = async (id) => {
   const { data } = await axios.get(
-    "https://65cd17cedd519126b8401aef.mockapi.io/cars/:carId"
+    "https://65cd17cedd519126b8401aef.mockapi.io/cars/"
   );
-  fetchCar(carId);
-  console.log(data);
+
+  console.log(id);
   return data;
 };
 
