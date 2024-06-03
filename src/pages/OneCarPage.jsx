@@ -1,25 +1,26 @@
-// import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CarModal from "../components/CarModal/CarModal";
-// import { fetchCars } from "../services/api";
+import { fetchCar } from "../services/api";
 
 const OneCarPage = () => {
+  const [cars, setCars] = useState([]);
   const { id } = useParams();
-  console.log(id);
 
-  // useEffect(() => {
-  //   const fetchOneCar = async (data) => {
-  //     const oneCarData = await fetchCars(data);
-  //     console.log(oneCarData);
-  //   };
+  useEffect(() => {
+    const fetchOneCar = async () => {
+      const oneCarData = await fetchCar();
+      console.log(oneCarData);
+      setCars(oneCarData);
+    };
 
-  //   fetchOneCar();
-  // }, []);
+    fetchOneCar();
+  }, []);
 
   return (
     <div>
       <h1>OneCarPage{id}</h1>
-      <CarModal />
+      <CarModal car={cars} />
     </div>
   );
 };

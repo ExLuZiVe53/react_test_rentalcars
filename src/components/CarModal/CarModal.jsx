@@ -18,10 +18,12 @@ const CarModal = ({ onCloseModal, modalData }) => {
       window.removeEventListener("keydown", onEscClick);
     };
   }, [onCloseModal]);
+  console.log(modalData);
   return (
     <div className="overlay" onClick={onOverlayClick}>
       <div className="modal">
         {modalData}
+
         <img src="" alt="" />
         <h3 className="titleMake">Make</h3>
         <span className="subtextModel">Model</span>
@@ -61,11 +63,11 @@ const CarModal = ({ onCloseModal, modalData }) => {
           </tbody>
         </table>
         <h3>Rental Conditions:</h3>
-        <button>Minimum age : 25</button>
-        <button>Valid drivers license</button>
-        <button>Security deposite required</button>
-        <button>Mileage: 5,858</button>
-        <button>Price: 40$</button>
+        <button type="checkbox">Minimum age : 25</button>
+        <button type="checkbox">Valid drivers license</button>
+        <button type="checkbox">Security deposite required</button>
+        <button type="checkbox">Mileage: 5,858</button>
+        <button type="checkbox">Price: 40$</button>
         <button type="submit">Rental car</button>
       </div>
     </div>
