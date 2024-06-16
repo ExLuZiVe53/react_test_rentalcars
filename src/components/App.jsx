@@ -1,7 +1,7 @@
 import { Suspense, lazy } from "react";
 // import CarForm from "./components/CarForm/CarForm";
 
-import { NavLink, Outlet, Route, Routes } from "react-router-dom";
+import { NavLink, Route, Routes } from "react-router-dom";
 import Loader from "./Loader";
 
 const HomePage = lazy(() => import("../pages/HomePage"));
@@ -38,7 +38,6 @@ const App = () => {
             <li>
               <NavLink to="/favorites">Favorites</NavLink>
             </li>
-            <Outlet />
           </ul>
         </nav>
       </header>

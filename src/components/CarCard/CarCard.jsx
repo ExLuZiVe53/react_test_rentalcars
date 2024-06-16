@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { FaRegHeart } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const CarCard = ({
   id,
@@ -62,9 +63,11 @@ const CarCard = ({
         </tbody>
       </table>
 
-      <button className="btnMore" onClick={() => onOpenModal()}>
-        Learn more
-      </button>
+      <Link to={`${id}`}>
+        <button className="btnMore" onClick={() => onOpenModal()}>
+          Learn more
+        </button>
+      </Link>
     </div>
   );
 };

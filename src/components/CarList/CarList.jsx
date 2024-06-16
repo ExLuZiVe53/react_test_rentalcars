@@ -12,28 +12,26 @@ const CarList = ({ items, toogleFavorite, onOpenModal }) => {
         items.map((item) => {
           return (
             <li className="cars__Item" key={`${item.id}_${item.engineSize}`}>
-              <Link to={`${item.id}`}>
-                <CarCard
-                  id={item.id}
-                  year={item.year}
-                  make={item.make}
-                  model={item.model}
-                  type={item.type}
-                  img={item.img}
-                  description={item.description}
-                  fuelConsumption={item.fuelConsumption}
-                  engineSize={item.engineSize}
-                  accessories={item.accessories}
-                  functionalities={item.functionalities}
-                  rentalPrice={item.rentalPrice}
-                  rentalCompany={item.rentalCompany}
-                  address={item.address}
-                  rentalConditions={item.rentalConditions}
-                  mileage={item.mileage}
-                  toogleFavorite={toogleFavorite}
-                  onOpenModal={onOpenModal}
-                />
-              </Link>
+              <CarCard
+                id={item.id}
+                year={item.year}
+                make={item.make}
+                model={item.model}
+                type={item.type}
+                img={item.img}
+                description={item.description}
+                fuelConsumption={item.fuelConsumption}
+                engineSize={item.engineSize}
+                accessories={item.accessories}
+                functionalities={item.functionalities}
+                rentalPrice={item.rentalPrice}
+                rentalCompany={item.rentalCompany}
+                address={item.address}
+                rentalConditions={item.rentalConditions}
+                mileage={item.mileage}
+                toogleFavorite={toogleFavorite}
+                onOpenModal={onOpenModal}
+              />
             </li>
           );
         })}
