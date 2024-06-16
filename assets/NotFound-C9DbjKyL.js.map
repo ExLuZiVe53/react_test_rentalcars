@@ -1,0 +1,1 @@
+{"version":3,"file":"NotFound-C9DbjKyL.js","sources":["../../src/pages/NotFound.jsx"],"sourcesContent":["const NotFound = () => {\r\n  return (\r\n    <div>\r\n      <h1>NotFound</h1>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default NotFound;\r\n"],"names":["NotFound","jsx"],"mappings":"wCAAA,MAAMA,EAAW,IAEZC,MAAA,MAAA,CACC,SAACA,EAAA,IAAA,KAAA,CAAG,oBAAQ,CACd,CAAA"}
