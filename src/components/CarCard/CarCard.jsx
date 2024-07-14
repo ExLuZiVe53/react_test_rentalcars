@@ -2,26 +2,27 @@ import PropTypes from "prop-types";
 import { FaRegHeart } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
-const CarCard = ({
-  id,
-  year,
-  make,
-  model,
-  type,
-  img,
-  // description,
-  // fuelConsumption,
-  // engineSize,
-  accessories,
-  // functionalities,
-  rentalPrice,
-  rentalCompany,
-  address,
-  onOpenModal,
-  // rentalConditions,
-  // mileage,
-  // toogleFavorite,
-}) => {
+const CarCard = (items) => {
+  const {
+    id,
+    year,
+    make,
+    model,
+    type,
+    img,
+    // description,
+    // fuelConsumption,
+    // engineSize,
+    accessories,
+    // functionalities,
+    rentalPrice,
+    rentalCompany,
+    address,
+    onOpenModal,
+    // rentalConditions,
+    // mileage,
+    // toogleFavorite,
+  } = items;
   const tableInfoCars = address.split(",");
 
   const city = tableInfoCars[1];

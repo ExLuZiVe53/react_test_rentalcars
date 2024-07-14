@@ -1,5 +1,4 @@
 // import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import CarCard from "../CarCard/CarCard.jsx";
 import CarForm from "../CarForm/CarForm.jsx";
 
